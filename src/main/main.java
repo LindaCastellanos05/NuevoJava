@@ -12,11 +12,13 @@ import controlador.controladorFactura;
 import controlador.controladorLogin;
 import controlador.controladorProducto;
 import controlador.controladorUsuario;
+import controlador.controladorVentas;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.ModeloUsuario;
 import modelo.modeloCategoria;
+import modelo.modeloDetalleFactura;
 import modelo.modeloEstado;
 import modelo.modeloFacturacion;
 
@@ -43,6 +45,9 @@ public class main {
     //controladorFactura cf = new controladorFactura(modfac);
     modeloEstado mode = new modeloEstado();
     //controladorEstado ce = new controladorEstado(mode);
+     modeloDetalleFactura moddet = new modeloDetalleFactura();
+     controladorVentas cv= new controladorVentas(moddet);
+     
     
     
     

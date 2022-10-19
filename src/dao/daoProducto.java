@@ -6,7 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.ModeloProducto;
 
@@ -26,6 +28,9 @@ public class daoProducto extends conexion{
     + "estado_producto,categoria_producto) VALUES (?,?,?,?,?,?)";
     String mostrar = "SELECT * FROM producto";
     /*********************************/
+    
+    //declaracion de modelos:
+    ModeloProducto modprod = new ModeloProducto();
     
     public String guardarProducto(ModeloProducto producto){
         int respuesta;
@@ -62,5 +67,71 @@ public class daoProducto extends conexion{
         
         return mensaje;
     }
+    //linda: buscar productos para hacer la venta:
+   public boolean consultarprod(Object obj) {
+        modprod =(ModeloProducto) obj;
+         String sql = "SELECT * FROM producto WHERE numeroserie_producto=?";
+        try {
+            con = conectar();
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1, modprod.getNumeroserie_producto());
+            rs = ps.executeQuery();
+            
+            if(rs.next()) {
+                
+               modprod.setCantidad_producto(rs.getInt("cantidad_producto"));
+               modprod.setEstado_producto(rs.getInt("estado_producto"));
+               modprod.setNombre_producto(rs.getString("nombre_producto"));
+               modprod.setPrecio_producto(rs.getDouble("precio_producto"));
+               modprod.setId_producto(rs.getInt("id_producto"));
+           
+               return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(daoProducto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
+   
+   //linda: editar en bd
+     public boolean editarproducto(ModeloProducto prod){
+     int respuesta;
+     boolean mensaje=true;
     
+    //conexion
+     try {
+       con=conectar();
+       String sql="UPDATE producto SET  cantidad_producto=? where id_producto=? ";
+    
+         ps=con.prepareStatement(sql);
+         
+         ps.setInt(1,prod.getCantidad_producto());
+         ps.setInt(2, prod.getId_producto());
+         
+            
+          respuesta=ps.executeUpdate();
+          
+          if(respuesta==1){
+              mensaje=true;
+          }
+          else{
+              mensaje=false;
+          }
+          
+          
+         
+     } catch (SQLException ex) {
+         Logger.getLogger(daoProducto.class.getName()).log(Level.SEVERE, null, ex);
+     }
+     finally{
+    
+     }
+    
+        
+        return mensaje;
+ 
+   
+   
+      }
 }
