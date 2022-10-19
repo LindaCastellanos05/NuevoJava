@@ -16,6 +16,7 @@ public class CrearEstado extends javax.swing.JFrame {
      */
     public CrearEstado() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -34,7 +35,7 @@ public class CrearEstado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton5 = new javax.swing.JButton();
+        btnguardarEstado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,14 +79,14 @@ public class CrearEstado extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton5.setBackground(new java.awt.Color(0, 93, 139));
-        jButton5.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Guardar");
-        jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnguardarEstado.setBackground(new java.awt.Color(0, 93, 139));
+        btnguardarEstado.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        btnguardarEstado.setForeground(new java.awt.Color(255, 255, 255));
+        btnguardarEstado.setText("Guardar");
+        btnguardarEstado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnguardarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnguardarEstadoActionPerformed(evt);
             }
         });
 
@@ -106,7 +107,7 @@ public class CrearEstado extends javax.swing.JFrame {
                             .addComponent(jSeparator1))
                         .addGap(270, 270, 270))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnguardarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(388, 388, 388))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -120,7 +121,7 @@ public class CrearEstado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnguardarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(198, Short.MAX_VALUE))
         );
 
@@ -138,9 +139,9 @@ public class CrearEstado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnguardarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnguardarEstadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,12 +180,12 @@ public class CrearEstado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
-    private javax.swing.JButton jButton5;
+    public javax.swing.JButton btnguardarEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField txtnombreEstado;
+    public javax.swing.JTextField txtnombreEstado;
     // End of variables declaration//GEN-END:variables
 }

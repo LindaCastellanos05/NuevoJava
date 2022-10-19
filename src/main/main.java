@@ -7,13 +7,17 @@ package main;
 
 import conexion.conexion;
 import controlador.controladorCategoria;
+import controlador.controladorEstado;
 import controlador.controladorFactura;
 import controlador.controladorLogin;
+import controlador.controladorProducto;
+import controlador.controladorUsuario;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.ModeloUsuario;
 import modelo.modeloCategoria;
+import modelo.modeloEstado;
 import modelo.modeloFacturacion;
 
 /**
@@ -30,13 +34,20 @@ public class main {
          conexion con = new conexion();
         try {
             con.conectar();
+            //si funcionan
             modeloCategoria modacat = new modeloCategoria();
         //controladorCategoria cc = new controladorCategoria(modacat);
             ModeloUsuario modusuario = new ModeloUsuario();
         //controladorLogin clogin = new controladorLogin(modusuario);
          modeloFacturacion modfac = new modeloFacturacion();
-    controladorFactura cf = new controladorFactura(modfac);
-        
+    //controladorFactura cf = new controladorFactura(modfac);
+    modeloEstado mode = new modeloEstado();
+    //controladorEstado ce = new controladorEstado(mode);
+    
+    
+    
+    //controladorProducto cp = new controladorProducto();
+        //controladorUsuario cu = new controladorUsuario();
         } catch (SQLException ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }

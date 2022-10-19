@@ -25,6 +25,7 @@ public class controladorLogin implements ActionListener{
     public controladorLogin(ModeloUsuario mu){
         login.setVisible(true);
         login.btningresarlogin.addActionListener(this);
+        login.btnsalirlogin.addActionListener(this);
     }
     
     public void verificarInicioSesion(){
@@ -78,7 +79,9 @@ public class controladorLogin implements ActionListener{
     public void actionPerformed(ActionEvent e) {
     if(e.getSource().equals(login.btningresarlogin)){
         verificarInicioSesion();
-    }    
+    }else if (e.getSource()==login.btnsalirlogin){
+        System.exit(0);
+    }
     }
     
 }

@@ -16,6 +16,7 @@ public class CrearCategoria extends javax.swing.JFrame {
      */
     public CrearCategoria() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
