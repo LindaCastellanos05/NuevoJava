@@ -16,6 +16,7 @@ public class Facturacion extends javax.swing.JFrame {
      */
     public Facturacion() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -62,7 +63,10 @@ public class Facturacion extends javax.swing.JFrame {
         txtfechaFac = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblventasfacturacion = new javax.swing.JTable();
-        jButton6 = new javax.swing.JButton();
+        lbltotalventas = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        btnfacturacion1 = new javax.swing.JButton();
+        btncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -195,12 +199,26 @@ public class Facturacion extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 107, 830, 430));
 
-        jButton6.setBackground(new java.awt.Color(0, 93, 139));
-        jButton6.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("Editar");
-        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 560, 80, 30));
+        lbltotalventas.setBackground(new java.awt.Color(204, 255, 204));
+        lbltotalventas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lbltotalventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 550, 170, 40));
+
+        jLabel13.setText("TOTAL:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 560, -1, -1));
+
+        btnfacturacion1.setBackground(new java.awt.Color(0, 93, 139));
+        btnfacturacion1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        btnfacturacion1.setForeground(new java.awt.Color(255, 255, 255));
+        btnfacturacion1.setText("BUSCAR FECHAS");
+        btnfacturacion1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btnfacturacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 140, 30));
+
+        btncancel.setBackground(new java.awt.Color(0, 93, 139));
+        btncancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btncancel.setForeground(new java.awt.Color(255, 255, 255));
+        btncancel.setText("REGRESAR");
+        btncancel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -253,11 +271,13 @@ public class Facturacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Admin;
-    private javax.swing.JButton jButton6;
+    public javax.swing.JButton btncancel;
+    public javax.swing.JButton btnfacturacion1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -277,6 +297,7 @@ public class Facturacion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator18;
     private javax.swing.JSeparator jSeparator19;
+    public javax.swing.JLabel lbltotalventas;
     public javax.swing.JTable tblventasfacturacion;
     public javax.swing.JTextField txtcantidadFac;
     public javax.swing.JTextField txtclienteFac;

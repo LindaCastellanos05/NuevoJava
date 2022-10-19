@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -17,8 +18,12 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import modelo.modeloFacturacion;
 import vista.Facturacion;
 
@@ -35,12 +40,16 @@ public class controladorFactura implements ActionListener, MouseListener {
     //tabla
     DefaultTableModel tablafactura = new DefaultTableModel();
     ArrayList<modeloFacturacion> dataVentas = new ArrayList<>();
-    
+    TableRowSorter trs;
     
     public controladorFactura(modeloFacturacion modfac){
         factura.setVisible(true);
         ventasRealizadas(factura.tblventasfacturacion);
         factura.tblventasfacturacion.addMouseListener(this);
+        factura.btnfacturacion1.addActionListener(this);
+        totaldeventas();
+        factura.btncancel.addActionListener(this);
+        
     }
     
     //mostrar el historial de ventas 
@@ -60,9 +69,11 @@ public class controladorFactura implements ActionListener, MouseListener {
         tablafactura.addColumn("LATITUD");
         
         
-        int numeroventas = daofacturacion.mostrartodo(modfac).size();
+       
          dataVentas = (ArrayList<modeloFacturacion>) daofacturacion.mostrartodo(modfac);
+          int numeroventas = daofacturacion.mostrartodo(modfac).size();
         System.out.println(numeroventas);
+        
         
         //lleno mi tabla con los datos previamente ingresados en la base de datos
         for(int i=0; i<numeroventas; i++){
@@ -78,11 +89,59 @@ public class controladorFactura implements ActionListener, MouseListener {
          col[8] = dataVentas.get(i).getLongitud_facturacion();
          col[9] = dataVentas.get(i).getLatitud_facturacion();
          
-         
-         
          tablafactura.addRow(col);
+         
+         
         }
+        factura.tblventasfacturacion.setModel(tablafactura);
+        
     }
+    //buscar facturaciones por fechas seleccionadas
+    public void buscar(){
+        
+            if(factura.txtfechaFac.getDate()==null){
+                JOptionPane.showMessageDialog(null, "Debe seleccionar una fecha para proceder a la busqueda");
+            }else{
+                //pasar a formato fecha
+           Date date = new Date();
+             SimpleDateFormat nuevoformato= new SimpleDateFormat("yyyy-MM-dd");
+               SimpleDateFormat simpleTime = new SimpleDateFormat("hh:mm:ss");
+             String fecha0=nuevoformato.format(factura.txtfechaFac.getDate());
+             String hora = simpleTime.format(date);
+          
+             String fecha =fecha0 +" "+hora;
+             
+        daofac.buscarfecha(fecha0);
+        
+         if(daofac.buscarfecha(fecha0).isEmpty()){
+           JOptionPane.showMessageDialog(null, "error, no hay facturas en fecha seleccionada");
+          
+         }else{
+             //Usamos el Tablerowsorter para poder filtrar los datos de la tabla segun la fecha que buscamos
+           System.out.println(fecha0);
+           trs = new TableRowSorter(tablafactura);   
+           trs.setRowFilter(RowFilter.regexFilter(fecha0, 3));
+              factura.tblventasfacturacion.setRowSorter(trs);
+              totaldeventas();
+            }
+            }
+           
+        
+        
+    }
+    //calcular el total de ganancias de ventas
+    public void totaldeventas(){
+ 
+   double fila=0;
+   double total=0;
+   
+    for(int i=0; i<factura.tblventasfacturacion.getRowCount(); i++){
+        fila= Double.parseDouble(factura.tblventasfacturacion.getValueAt(i, 2).toString());
+        total+=fila;
+     
+    }
+    factura.lbltotalventas.setText(String.valueOf("   Q"+total));
+}
     //accion de ver la tabla en los edit text
     public void vertabla(){
          int numfilas = factura.tblventasfacturacion.getColumnCount();
@@ -96,6 +155,8 @@ public class controladorFactura implements ActionListener, MouseListener {
        factura.txtcantidadFac.setText(par[1]);
        factura.txtidfac.setText(par[0]);
        factura.txtmontoFac.setText(par[2]);
+       
+       
        
       /* LocalDateTime localDateTime = LocalDateTime.parse(par[3]);
        Date convertedDatetime = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
@@ -113,10 +174,21 @@ public class controladorFactura implements ActionListener, MouseListener {
   System.out.println("se esta haciendo click en la tabla");
   
     }
+    
+    //metodo para cuando querramos regresar al principio a ver todas las facturas
+    public void resetTable(){
+         factura.tblventasfacturacion.setRowSorter(null);
+           totaldeventas();
+           factura.txtfechaFac.setDate(null);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       if(e.getSource()== factura.btnfacturacion1){
+           buscar();
+       }if(e.getSource()==factura.btncancel){
+           resetTable();
+       }
     }
 
     @Override
