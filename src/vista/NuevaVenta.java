@@ -66,6 +66,9 @@ public class NuevaVenta extends javax.swing.JFrame {
         lbltotalventa = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         txtidprodnuevaventa = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txtidusuarioventas = new javax.swing.JTextField();
 
         jButton6.setBackground(new java.awt.Color(0, 93, 139));
         jButton6.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
@@ -118,7 +121,7 @@ public class NuevaVenta extends javax.swing.JFrame {
 
             },
             new String [] {
-                "N°", "ID PRODUCTO", "NOMBRE", "PRECIO", "CANTIDAD", "IMPORTE"
+                "N°", "N° SERIE", "ID PRODUCTO", "NOMBRE", "PRECIO", "CANTIDAD", "IMPORTEl"
             }
         ));
         jScrollPane1.setViewportView(tblnuevaVenta);
@@ -211,6 +214,12 @@ public class NuevaVenta extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel15.setText("ID:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setText("Datos del cajero");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel16.setText("ID Usuario:");
+
         javax.swing.GroupLayout pnldatosNuevaVentaLayout = new javax.swing.GroupLayout(pnldatosNuevaVenta);
         pnldatosNuevaVenta.setLayout(pnldatosNuevaVentaLayout);
         pnldatosNuevaVentaLayout.setHorizontalGroup(
@@ -238,17 +247,6 @@ public class NuevaVenta extends javax.swing.JFrame {
                                 .addGap(41, 41, 41)
                                 .addComponent(btnañadirprodNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel14)
-                            .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
-                                .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtnitClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4)
-                                .addGap(6, 6, 6)
-                                .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
@@ -267,7 +265,25 @@ public class NuevaVenta extends javax.swing.JFrame {
                                 .addGap(21, 21, 21)
                                 .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtprecioProdNuevaVenta, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                                    .addComponent(txtidprodnuevaventa))))
+                                    .addComponent(txtidprodnuevaventa)))
+                            .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
+                                .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtnitClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel4)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel6))
+                                .addGap(59, 59, 59)
+                                .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtidusuarioventas, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 610, Short.MAX_VALUE))
                     .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
@@ -294,13 +310,17 @@ public class NuevaVenta extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbltotalventa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel6)
+                        .addGap(19, 19, 19)
+                        .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
                         .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(txtnitClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(txtidusuarioventas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -312,7 +332,7 @@ public class NuevaVenta extends javax.swing.JFrame {
                                     .addComponent(jLabel8)
                                     .addComponent(txtbusquedaProductoNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
-                                .addGap(0, 3, Short.MAX_VALUE)
+                                .addGap(0, 4, Short.MAX_VALUE)
                                 .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnescanerNuevaVenta)
                                     .addComponent(btnbuscarprod, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -440,9 +460,11 @@ public class NuevaVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -460,6 +482,7 @@ public class NuevaVenta extends javax.swing.JFrame {
     public javax.swing.JTextField txtbusquedaProductoNuevaVenta;
     public javax.swing.JTextField txtdpiClienteNuevaVenta;
     public javax.swing.JTextField txtidprodnuevaventa;
+    public javax.swing.JTextField txtidusuarioventas;
     public javax.swing.JTextField txtnitClienteNuevaVenta;
     public javax.swing.JTextField txtnombreprodNuevaVenta;
     public javax.swing.JTextField txtprecioProdNuevaVenta;

@@ -185,20 +185,6 @@
                                       <Component id="btnañadirprodNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtnitClienteNuevaVenta" min="-2" pref="89" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                      <Component id="txtdpiClienteNuevaVenta" min="-2" pref="89" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="jSeparator1" alignment="0" min="-2" pref="508" max="-2" attributes="0"/>
                                   <Component id="jSeparator2" alignment="0" min="-2" pref="508" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -221,6 +207,29 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtprecioProdNuevaVenta" pref="89" max="32767" attributes="0"/>
                                           <Component id="txtidprodnuevaventa" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtnitClienteNuevaVenta" min="-2" pref="89" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                              <Component id="txtdpiClienteNuevaVenta" min="-2" pref="89" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="txtidusuarioventas" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
                               </Group>
@@ -256,13 +265,18 @@
                               <Component id="lbltotalventa" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtnitClienteNuevaVenta" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtdpiClienteNuevaVenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtidusuarioventas" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jSeparator1" min="-2" pref="2" max="-2" attributes="0"/>
@@ -277,7 +291,7 @@
                                       </Group>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="btnescanerNuevaVenta" min="-2" max="-2" attributes="0"/>
                                           <Component id="btnbuscarprod" min="-2" pref="30" max="-2" attributes="0"/>
@@ -335,17 +349,23 @@
                 <Component class="javax.swing.JTable" name="tblnuevaVenta">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="0">
+                      <Table columnCount="7" rowCount="0">
                         <Column editable="true" title="N&#xb0;" type="java.lang.Object"/>
+                        <Column editable="true" title="N&#xb0; SERIE" type="java.lang.Object"/>
                         <Column editable="true" title="ID PRODUCTO" type="java.lang.Object"/>
                         <Column editable="true" title="NOMBRE" type="java.lang.Object"/>
                         <Column editable="true" title="PRECIO" type="java.lang.Object"/>
                         <Column editable="true" title="CANTIDAD" type="java.lang.Object"/>
-                        <Column editable="true" title="IMPORTE" type="java.lang.Object"/>
+                        <Column editable="true" title="IMPORTEl" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -664,6 +684,27 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtidprodnuevaventa">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Datos del cajero"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel16">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="14" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="ID Usuario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtidusuarioventas">
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>

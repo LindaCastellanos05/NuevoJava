@@ -58,6 +58,7 @@ public class controladorVentas implements ActionListener, MouseListener {
         nv.btndescartarNuevaVenta.addActionListener(this);
         nv.tblnuevaVenta.addMouseListener(this);
         nv.btneliminarNuevaVenta.addActionListener(this);
+        nv.btnguardarNuevaVenta.addActionListener(this);
     }
     
     //set de la hora 
@@ -122,19 +123,20 @@ public class controladorVentas implements ActionListener, MouseListener {
         JOptionPane.showMessageDialog(nv, "No hay suficientes productos en existencia");  
     }else{
          importe = precioprod*cantidadprod;
-          Object[] objeto = new Object[6];
+          Object[] objeto = new Object[7];
         objeto[0]=item;
         objeto[1]=numeroserie;
-        objeto[2]=nombreprod;
-        objeto[3]= precioprod;
-        objeto[4]=cantidadprod;
-        objeto[5]=importe;
+        objeto[2]=idprod;
+        objeto[3]=nombreprod;
+        objeto[4]= precioprod;
+        objeto[5]=cantidadprod;
+        objeto[6]=importe;
         
       for(int i=0;i<nv.tblnuevaVenta.getRowCount(); i++){
           int fila=0;
           int total=0;
           
-            fila= Integer.parseInt(nv.tblnuevaVenta.getValueAt(i, 4).toString());
+            fila= Integer.parseInt(nv.tblnuevaVenta.getValueAt(i, 5).toString());
         total+=fila;
         modfac.setCantidad_facturacion(total);
     
@@ -171,8 +173,8 @@ public class controladorVentas implements ActionListener, MouseListener {
    double totalproductos =0;
     
     for(int i=0; i<nv.tblnuevaVenta.getRowCount(); i++){
-        cantidadpp = Double.parseDouble(nv.tblnuevaVenta.getValueAt(i, 3).toString());
-       double precio = Double.parseDouble(nv.tblnuevaVenta.getValueAt(i, 4).toString());
+        cantidadpp = Double.parseDouble(nv.tblnuevaVenta.getValueAt(i, 4).toString());
+       double precio = Double.parseDouble(nv.tblnuevaVenta.getValueAt(i, 5).toString());
         total+=(cantidadpp*precio);
         totalproductos +=cantidadpp;
      
@@ -198,12 +200,90 @@ public class controladorVentas implements ActionListener, MouseListener {
        for( int i =0; i< numfilas; i++){
        par [i]= String .valueOf(nv.tblnuevaVenta.getValueAt(nv.tblnuevaVenta.getSelectedRow(), i));
  }
- 
-       nv.txtidprodnuevaventa.setText(par[1]);
-       nv.txtnombreprodNuevaVenta.setText(par[2]);
-       nv.txtprecioProdNuevaVenta.setText(par[3]);
+      
+       nv.txtbusquedaProductoNuevaVenta.setText(par[1]);
+       nv.txtidprodnuevaventa.setText(par[2]);
+       nv.txtnombreprodNuevaVenta.setText(par[3]);
+       nv.txtprecioProdNuevaVenta.setText(par[4]);
+       int cantidad = Integer.parseInt(par[5]);
+       nv.jspcantidadNuevaVenta.setValue(cantidad);
+       
+        //buscar el producto para ver el stock que quedo:
+          
+            modprod.setNumeroserie_producto(nv.txtbusquedaProductoNuevaVenta.getText().toString());
+            
+            boolean respuesta = daoprod.consultarprod(modprod);
+            if(respuesta ==true){
+               nv.txtstockProdNuevaVenta.setText(String.valueOf(modprod.getCantidad_producto()));
+            }
 
   System.out.println("se esta haciendo click en la tabla");
+  }
+  
+  //eliminar el producto añadido a la factura:
+  public void eliminarproducto(){
+      if(nv.txtidprodnuevaventa.getText().toString().equals("")){
+           JOptionPane.showMessageDialog(nv, "Seleccione un producto añadido en la venta para eliminar");
+      }else{
+          String cantidad = String.valueOf(nv.jspcantidadNuevaVenta.getValue().toString());
+          int cantidadprod = Integer.parseInt(cantidad);
+          int idprod = Integer.parseInt(nv.txtidprodnuevaventa.getText().toString());
+          int cantidaddisp =Integer.parseInt(nv.txtstockProdNuevaVenta.getText().toString());
+         
+          
+           //añadir cantidad de regreseo al inventario
+        while(modprod.getId_producto()==idprod){
+            System.out.println("se esta ejecutando el while");
+            
+        int stockreset = cantidadprod+cantidaddisp;
+        modprod.setCantidad_producto(stockreset);
+        modprod.setId_producto(idprod);
+        daoprod.editarproducto(modprod);
+        
+        idprod++;
+        
+        JOptionPane.showMessageDialog(nv, "Se elimino el producto de la venta");
+    
+        System.out.println("esto es lo que queda:"+ modprod.getCantidad_producto());
+        }
+          
+      }
+  }
+  //lo utilizaremos para eliminar la fila del producto eliminado de la tabla de ventas
+  public void eliminarfila(){
+        if(nv.tblnuevaVenta.getSelectedRow()!=-1){
+           tablafactura.removeRow(nv.tblnuevaVenta.getSelectedRow());
+       limpiarareaprod();
+       calculartotventa();
+      }
+         
+ 
+  }
+  
+  //aqui vamos a añadir la venta total a la bd para despues ser mostrada en ventana facturacion
+  public void guardarventabd(){
+      if(nv.txtnitClienteNuevaVenta.getText().toString().equals(daodet)&&nv.lbltotalventa.getText().toString().equals("0.0")){
+           JOptionPane.showMessageDialog(nv, "Añada productos para empezar una nueva venta");
+   
+      }else  if(nv.txtnitClienteNuevaVenta.getText().toString().equals(daodet)&&nv.lbltotalventa.getText().toString().equals("")){
+           JOptionPane.showMessageDialog(nv, "Añada productos para empezar una nueva venta");
+   
+      }else if(nv.txtidusuarioventas.getText().toString().equals("")){
+          JOptionPane.showMessageDialog(nv, "Ingrese su numero de cajero para proseguir a la venta");
+      }else{
+         /*String dpicliente = nv.txtdpiClienteNuevaVenta.getText().toString();
+         String nitcliente = nv.txtnitClienteNuevaVenta.getText().toString();
+         int idcajero = Integer.parseInt(nv.txtidusuarioventas.getText().toString());
+         double monto = Double.parseDouble(nv.lbltotalventa.getText().toString());*/
+          
+        //pasar a formato fecha
+           Date date = new Date();
+             SimpleDateFormat nuevoformato= new SimpleDateFormat("yyyy-MM-dd");
+             String fecha0=nuevoformato.format(date.getDate());
+         System.out.println(fecha0);
+         System.out.println(modfac.getCantidad_facturacion());
+         
+      }
   }
     
     @Override
@@ -216,7 +296,10 @@ public class controladorVentas implements ActionListener, MouseListener {
     }else if(e.getSource()==nv.btndescartarNuevaVenta){
         nv.setVisible(false);
     }else if(e.getSource()==nv.btneliminarNuevaVenta){
-        
+        eliminarproducto();
+        eliminarfila();
+    }else if(e.getSource()==nv.btnguardarNuevaVenta){
+        guardarventabd();
     }
     }
 
