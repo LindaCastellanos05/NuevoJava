@@ -10,7 +10,13 @@ import dao.daoFacturacion;
 import dao.daoProducto;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
@@ -24,7 +30,7 @@ import vista.NuevaVenta;
  *
  * @author Linda
  */
-public class controladorVentas implements ActionListener {
+public class controladorVentas implements ActionListener, MouseListener {
     //instancia de clases
     daoFacturacion daofac = new daoFacturacion();
     daoProducto daoprod = new daoProducto();
@@ -49,8 +55,19 @@ public class controladorVentas implements ActionListener {
         nv.setVisible(true);
         nv.btnbuscarprod.addActionListener(this);
         nv.btnañadirprodNuevaVenta.addActionListener(this);
+        nv.btndescartarNuevaVenta.addActionListener(this);
+        nv.tblnuevaVenta.addMouseListener(this);
+        nv.btneliminarNuevaVenta.addActionListener(this);
     }
     
+    //set de la hora 
+    public void fecha(){
+        Date date = new Date();
+             SimpleDateFormat nuevoformato= new SimpleDateFormat("yyyy-MM-dd");
+             String fecha = nuevoformato.format(date);
+             System.out.println("esta es la fecha"+fecha);
+             
+        }
     
     //buscar producto en base de datos por numero de serie:
     public void buscarproducto(){
@@ -67,6 +84,10 @@ public class controladorVentas implements ActionListener {
                nv.txtidprodnuevaventa.setText(String.valueOf(modprod.getId_producto()));
                int estado = modprod.getEstado_producto();
                 
+               if(estado!=7){
+                    JOptionPane.showMessageDialog(null, "No hay disponibles en la sucursal");
+                   limpiarareaprod();
+               }
             }
         }
     }
@@ -77,7 +98,6 @@ public class controladorVentas implements ActionListener {
     tablafactura = (DefaultTableModel) nv.tblnuevaVenta.getModel();
 
     int idprod = Integer.parseInt(nv.txtidprodnuevaventa.getText().toString());
-    
     String nitcliente = nv.txtnitClienteNuevaVenta.getText().toString();
     String dpicliente = nv.txtdpiClienteNuevaVenta.getText().toString();
     int tarjetapuntos = Integer.parseInt(nv.txttarjetaPuntosNuevaVenta.getText().toString());
@@ -161,13 +181,70 @@ public class controladorVentas implements ActionListener {
        modfac.setMonto_facturacion(totalproductos);
 }
 
+    public void limpiarareaprod(){
+        nv.txtbusquedaProductoNuevaVenta.setText("");
+        nv.txtidprodnuevaventa.setText("");
+        nv.txtnombreprodNuevaVenta.setText("");
+        nv.txtstockProdNuevaVenta.setText("");
+        nv.txtprecioProdNuevaVenta.setText("");
+        nv.jspcantidadNuevaVenta.setValue(0);
+        
+    }
+    //ver las ventas hechas en vista ventas
+  public void vertablaguardarventa(){
+             int numfilas = nv.tblnuevaVenta.getColumnCount();
+                      
+       String[] par = new String[numfilas];
+       for( int i =0; i< numfilas; i++){
+       par [i]= String .valueOf(nv.tblnuevaVenta.getValueAt(nv.tblnuevaVenta.getSelectedRow(), i));
+ }
+ 
+       nv.txtidprodnuevaventa.setText(par[1]);
+       nv.txtnombreprodNuevaVenta.setText(par[2]);
+       nv.txtprecioProdNuevaVenta.setText(par[3]);
+
+  System.out.println("se esta haciendo click en la tabla");
+  }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
     if(e.getSource()==nv.btnbuscarprod){
         buscarproducto();
     }else if(e.getSource()==nv.btnañadirprodNuevaVenta){
          agregarprodventatabla();
+         limpiarareaprod();
+    }else if(e.getSource()==nv.btndescartarNuevaVenta){
+        nv.setVisible(false);
+    }else if(e.getSource()==nv.btneliminarNuevaVenta){
+        
     }
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource()==nv.tblnuevaVenta){
+            vertablaguardarventa();
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
             
 }
