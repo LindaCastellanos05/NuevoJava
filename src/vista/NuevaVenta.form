@@ -183,6 +183,8 @@
                                       <Component id="jspcantidadNuevaVenta" min="-2" pref="89" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                       <Component id="btnañadirprodNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="btneliminarNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jSeparator1" alignment="0" min="-2" pref="508" max="-2" attributes="0"/>
@@ -239,9 +241,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Component id="btndescartarNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="btneliminarNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
                               <Component id="btnguardarNuevaVenta" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -321,13 +321,13 @@
                                   <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jspcantidadNuevaVenta" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnañadirprodNuevaVenta" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="btneliminarNuevaVenta" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jSeparator3" min="-2" pref="2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="btndescartarNuevaVenta" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="btneliminarNuevaVenta" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="btnguardarNuevaVenta" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>

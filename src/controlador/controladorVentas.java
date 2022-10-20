@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import dao.daoCliente;
 import dao.daoDetalle;
 import dao.daoFacturacion;
 import dao.daoProducto;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -21,6 +23,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import modelo.ModeloProducto;
+import modelo.modeloCliente;
 import modelo.modeloDetalleFactura;
 import modelo.modeloFacturacion;
 import vista.Facturacion;
@@ -35,9 +38,11 @@ public class controladorVentas implements ActionListener, MouseListener {
     daoFacturacion daofac = new daoFacturacion();
     daoProducto daoprod = new daoProducto();
     daoDetalle daodet = new daoDetalle();
+    daoCliente daoc = new daoCliente();
     modeloFacturacion modfac = new modeloFacturacion();
     ModeloProducto modprod = new ModeloProducto();
     modeloDetalleFactura moddet = new modeloDetalleFactura();
+    modeloCliente modc = new modeloCliente();
     NuevaVenta nv = new NuevaVenta();
     
     //tabla
@@ -262,27 +267,67 @@ public class controladorVentas implements ActionListener, MouseListener {
   
   //aqui vamos a añadir la venta total a la bd para despues ser mostrada en ventana facturacion
   public void guardarventabd(){
-      if(nv.txtnitClienteNuevaVenta.getText().toString().equals(daodet)&&nv.lbltotalventa.getText().toString().equals("0.0")){
+      //validaciones para el envio de la factura a la bd
+      if(nv.lbltotalventa.getText().toString().equals("0.0")||nv.lbltotalventa.getText().toString().equals("")){
            JOptionPane.showMessageDialog(nv, "Añada productos para empezar una nueva venta");
    
-      }else  if(nv.txtnitClienteNuevaVenta.getText().toString().equals(daodet)&&nv.lbltotalventa.getText().toString().equals("")){
-           JOptionPane.showMessageDialog(nv, "Añada productos para empezar una nueva venta");
-   
+      }else  if(nv.txtnitClienteNuevaVenta.getText().toString().equals("")){
+           JOptionPane.showMessageDialog(nv, "Añada nit para guardar la venta");
+           
       }else if(nv.txtidusuarioventas.getText().toString().equals("")){
-          JOptionPane.showMessageDialog(nv, "Ingrese su numero de cajero para proseguir a la venta");
+          JOptionPane.showMessageDialog(nv, "Ingrese su numero de cajero");
+   
       }else{
-         /*String dpicliente = nv.txtdpiClienteNuevaVenta.getText().toString();
+         //nos servira para buscar el id del cliente si es que se ha creado una cuenta con anterioridad:
+         String dpicliente = nv.txtdpiClienteNuevaVenta.getText().toString();
+         
          String nitcliente = nv.txtnitClienteNuevaVenta.getText().toString();
          int idcajero = Integer.parseInt(nv.txtidusuarioventas.getText().toString());
-         double monto = Double.parseDouble(nv.lbltotalventa.getText().toString());*/
+         double monto = Double.parseDouble(nv.lbltotalventa.getText().toString());
           
-        //pasar a formato fecha
-           Date date = new Date();
-             SimpleDateFormat nuevoformato= new SimpleDateFormat("yyyy-MM-dd");
-             String fecha0=nuevoformato.format(date.getDate());
-         System.out.println(fecha0);
-         System.out.println(modfac.getCantidad_facturacion());
+         //buscar cliente para ver si existe 
+          modc.setDpi_cliente(dpicliente);
          
+          boolean respuesta = daoc.consultarcliente(modc);
+          int idcliente;
+            if(respuesta ==true){
+               idcliente = modc.getId_cliente();
+            }else{
+               idcliente = 0;
+            }
+            
+        
+        System.out.println("id: "+idcliente);
+        //pasar a formato fecha
+        LocalDate fechadhoy = LocalDate.now();//si sirve
+        
+        //pruebas-----------------------------------------
+         System.out.println(fechadhoy);
+         //---------------------------------------------------
+         
+         //contar la cantidad de productos que van a ser vendidos:
+          int totalproductos =0;
+    
+    for(int i=0; i<nv.tblnuevaVenta.getRowCount(); i++){
+        cantidadpp = Integer.parseInt(nv.tblnuevaVenta.getValueAt(i, 5).toString());
+        totalproductos +=cantidadpp;
+     
+    }
+     //setteamos el modelo factura:
+       modfac.setCantidad_facturacion(totalproductos);
+         System.out.println("cantidad: "+modfac.getCantidad_facturacion());
+         
+         modfac.setFecha_facturacion(String.valueOf(fechadhoy));
+         modfac.setIdcajero_facturacion(idcajero);
+         modfac.setIdcliente_facturacion(idcliente);
+         modfac.setMonto_facturacion(monto);
+         modfac.setNit_facturacion(nitcliente);
+         
+        boolean respuesta2 = daofac.agregar(modfac);
+            if(respuesta ==true){
+                JOptionPane.showMessageDialog(nv, "se guardó la venta");
+                
+            }
       }
   }
     

@@ -32,13 +32,42 @@ public class daoFacturacion extends conexion implements crudInterface{
     //--------------------------------querys--------------------------------------------------------
     String sqlselectall ="select * from facturacion";
     String buscarfechas ="select * from facturacion where fecha_facturacion=?";
+    String insertar ="insert into facturacion(cantidad_facturacion, monto_facturacion, fecha_facturacion, "
+            + "nit_facturacion, idcajero_facturacion, idcliente_facturacion) values(?,?,?,?,?,?)";
     //----------------------------------------------------------------------------------------------
     //declaracion modelos
     modeloFacturacion modfactura = new modeloFacturacion();
     
     @Override
     public boolean agregar(Object obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    boolean resultado = false;
+    modfactura =(modeloFacturacion)obj;
+    
+        try {
+          con=conectar();
+          ps=con.prepareStatement(insertar);
+          
+          ps.setInt(1,modfactura.getCantidad_facturacion());
+          ps.setDouble(2, modfactura.getMonto_facturacion());
+          ps.setString(3, modfactura.getFecha_facturacion());
+          ps.setString(4, modfactura.getNit_facturacion());
+          ps.setInt(5, modfactura.getIdcajero_facturacion());
+          ps.setInt(6, modfactura.getIdcliente_facturacion());
+          
+           if(ps.executeUpdate()==1){
+               resultado = true;
+               System.out.println("se guardo");
+           }else{
+               resultado = false;
+               System.out.println("NO se guardo");
+           }
+          
+        }catch(SQLException ex){
+            Logger.getLogger(daoFacturacion.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("algo paso");
+        }
+        mostrartodo(modfactura);
+        return resultado;
     }
 
     @Override
