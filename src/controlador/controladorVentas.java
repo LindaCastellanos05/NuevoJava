@@ -101,6 +101,11 @@ public class controladorVentas implements ActionListener, MouseListener {
     
     //agregar un producto a la factura de la vista nueva venta
     public void agregarprodventatabla(){
+        try{
+        if(nv.txtbusquedaProductoNuevaVenta.getText().toString().equals("")){
+            JOptionPane.showMessageDialog(null, "Busque un producto para añadirlo a la venta");
+        }else{
+            
         
     tablafactura = (DefaultTableModel) nv.tblnuevaVenta.getModel();
 
@@ -166,9 +171,11 @@ public class controladorVentas implements ActionListener, MouseListener {
         
        item+=1; 
        
-     
     }
-    
+    }
+        }catch(Exception e){
+            
+        }
  
 }
     
@@ -326,7 +333,13 @@ public class controladorVentas implements ActionListener, MouseListener {
         boolean respuesta2 = daofac.agregar(modfac);
             if(respuesta ==true){
                 JOptionPane.showMessageDialog(nv, "se guardó la venta");
-                
+                tablafactura.getDataVector().removeAllElements();
+                nv.tblnuevaVenta.updateUI();
+                limpiarareaprod();
+                nv.txtdpiClienteNuevaVenta.setText("");
+                nv.txtnitClienteNuevaVenta.setText("");
+                nv.txtidusuarioventas.setText("");
+                nv.lbltotalventa.setText("");
             }
       }
   }
