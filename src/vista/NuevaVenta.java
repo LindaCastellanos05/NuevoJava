@@ -38,10 +38,8 @@ public class NuevaVenta extends javax.swing.JFrame {
         tblnuevaVenta = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         txtnitClienteNuevaVenta = new javax.swing.JTextField();
         txtdpiClienteNuevaVenta = new javax.swing.JTextField();
-        txttarjetaPuntosNuevaVenta = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -131,8 +129,11 @@ public class NuevaVenta extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         jLabel4.setText("DPI:");
 
-        jLabel5.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jLabel5.setText("N° Tarjeta Pts:");
+        txtnitClienteNuevaVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnitClienteNuevaVentaActionPerformed(evt);
+            }
+        });
 
         jLabel6.setBackground(new java.awt.Color(204, 204, 255));
         jLabel6.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
@@ -242,16 +243,12 @@ public class NuevaVenta extends javax.swing.JFrame {
                                     .addComponent(jLabel6)
                                     .addGroup(pnldatosNuevaVentaLayout.createSequentialGroup()
                                         .addComponent(jLabel3)
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtnitClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txttarjetaPuntosNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(6, 6, 6)
+                                .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7)
@@ -302,10 +299,8 @@ public class NuevaVenta extends javax.swing.JFrame {
                         .addGroup(pnldatosNuevaVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5)
                             .addComponent(txtnitClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txttarjetaPuntosNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtdpiClienteNuevaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -390,6 +385,10 @@ public class NuevaVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtbusquedaProductoNuevaVentaActionPerformed
 
+    private void txtnitClienteNuevaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnitClienteNuevaVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnitClienteNuevaVentaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -444,7 +443,6 @@ public class NuevaVenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -466,6 +464,5 @@ public class NuevaVenta extends javax.swing.JFrame {
     public javax.swing.JTextField txtnombreprodNuevaVenta;
     public javax.swing.JTextField txtprecioProdNuevaVenta;
     public javax.swing.JTextField txtstockProdNuevaVenta;
-    public javax.swing.JTextField txttarjetaPuntosNuevaVenta;
     // End of variables declaration//GEN-END:variables
 }

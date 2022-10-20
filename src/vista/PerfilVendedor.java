@@ -30,12 +30,10 @@ public class PerfilVendedor extends javax.swing.JFrame {
         pnltitulonuevaventa = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnTarjetaPtsVen = new javax.swing.JButton();
         btnClienteVendedor = new javax.swing.JButton();
         btnVerProductVend = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(890, 676));
@@ -61,7 +59,7 @@ public class PerfilVendedor extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         pnltitulonuevaventaLayout.setVerticalGroup(
             pnltitulonuevaventaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,12 +70,6 @@ public class PerfilVendedor extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
-
-        btnTarjetaPtsVen.setBackground(new java.awt.Color(0, 93, 139));
-        btnTarjetaPtsVen.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        btnTarjetaPtsVen.setForeground(new java.awt.Color(255, 255, 255));
-        btnTarjetaPtsVen.setText("Tarjeta de Puntos");
-        btnTarjetaPtsVen.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnClienteVendedor.setBackground(new java.awt.Color(0, 93, 139));
         btnClienteVendedor.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
@@ -96,36 +88,24 @@ public class PerfilVendedor extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/inventario.png"))); // NOI18N
         jLabel3.setAutoscrolls(true);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tarjetas.png"))); // NOI18N
-
         javax.swing.GroupLayout pnlperfilVendedorLayout = new javax.swing.GroupLayout(pnlperfilVendedor);
         pnlperfilVendedor.setLayout(pnlperfilVendedorLayout);
         pnlperfilVendedorLayout.setHorizontalGroup(
             pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnltitulonuevaventa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnlperfilVendedorLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlperfilVendedorLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlperfilVendedorLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(btnVerProductVend, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlperfilVendedorLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
-                .addGroup(pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnClienteVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlperfilVendedorLayout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jLabel4)))
-                .addGroup(pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlperfilVendedorLayout.createSequentialGroup()
-                        .addGap(158, 158, 158)
-                        .addComponent(btnTarjetaPtsVen, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(169, 169, 169))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlperfilVendedorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addGap(192, 192, 192))))
+                        .addComponent(btnVerProductVend, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135)
+                        .addComponent(btnClienteVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(257, 257, 257))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlperfilVendedorLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(181, 181, 181)
+                        .addComponent(jLabel4)
+                        .addGap(281, 281, 281))))
         );
         pnlperfilVendedorLayout.setVerticalGroup(
             pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,13 +114,11 @@ public class PerfilVendedor extends javax.swing.JFrame {
                 .addGap(74, 74, 74)
                 .addGroup(pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel3))
                 .addGap(30, 30, 30)
                 .addGroup(pnlperfilVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnClienteVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVerProductVend, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTarjetaPtsVen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVerProductVend, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(146, Short.MAX_VALUE))
         );
 
@@ -195,13 +173,11 @@ public class PerfilVendedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClienteVendedor;
-    private javax.swing.JButton btnTarjetaPtsVen;
     private javax.swing.JButton btnVerProductVend;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel pnlperfilVendedor;
     private javax.swing.JPanel pnltitulonuevaventa;
     // End of variables declaration//GEN-END:variables

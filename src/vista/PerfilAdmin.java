@@ -35,12 +35,10 @@ public class PerfilAdmin extends javax.swing.JFrame {
         btnVentasAdm = new javax.swing.JButton();
         btnUusarioAdm = new javax.swing.JButton();
         btnClienteAdm = new javax.swing.JButton();
-        btnTarjetaPtsAdm = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(890, 676));
@@ -123,17 +121,6 @@ public class PerfilAdmin extends javax.swing.JFrame {
             }
         });
 
-        btnTarjetaPtsAdm.setBackground(new java.awt.Color(0, 93, 139));
-        btnTarjetaPtsAdm.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        btnTarjetaPtsAdm.setForeground(new java.awt.Color(255, 255, 255));
-        btnTarjetaPtsAdm.setText("Tarjeta de Puntos");
-        btnTarjetaPtsAdm.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnTarjetaPtsAdm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTarjetaPtsAdmActionPerformed(evt);
-            }
-        });
-
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/almacen.png"))); // NOI18N
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/punto-de-venta.png"))); // NOI18N
@@ -141,8 +128,6 @@ public class PerfilAdmin extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/clasificacion.png"))); // NOI18N
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/atencion-al-cliente.png"))); // NOI18N
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tarjetas.png"))); // NOI18N
 
         javax.swing.GroupLayout pnlperfilAdminLayout = new javax.swing.GroupLayout(pnlperfilAdmin);
         pnlperfilAdmin.setLayout(pnlperfilAdminLayout);
@@ -152,63 +137,56 @@ public class PerfilAdmin extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(pnlperfilAdminLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
                 .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(btnInventarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel3)))
-                .addGap(71, 71, 71)
+                    .addComponent(jLabel3)
+                    .addComponent(btnInventarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(119, 119, 119)
                 .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnVentasAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
-                .addGap(94, 94, 94)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
-                        .addComponent(btnUusarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86)
-                        .addComponent(btnClienteAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(93, 93, 93)
-                        .addComponent(btnTarjetaPtsAdm))
-                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(110, 110, 110)
-                        .addComponent(jLabel6)
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel7)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel5)
+                    .addComponent(btnUusarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(105, 105, 105)
+                .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(btnClienteAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(220, 220, 220))
         );
         pnlperfilAdminLayout.setVerticalGroup(
             pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlperfilAdminLayout.createSequentialGroup()
-                .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
                 .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlperfilAdminLayout.createSequentialGroup()
-                        .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(33, 33, 33))
-                    .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel7)))
-                .addGap(56, 56, 56)
+                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
+                        .addComponent(Admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlperfilAdminLayout.createSequentialGroup()
+                                .addGap(113, 113, 113)
+                                .addComponent(jLabel5))
+                            .addGroup(pnlperfilAdminLayout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)))))
+                    .addGroup(pnlperfilAdminLayout.createSequentialGroup()
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel6)))
+                .addGap(59, 59, 59)
                 .addGroup(pnlperfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnVentasAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInventarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUusarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnClienteAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTarjetaPtsAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(311, Short.MAX_VALUE))
+                    .addComponent(btnUusarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVentasAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnInventarioAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlperfilAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 1001, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlperfilAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 1001, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,10 +211,6 @@ public class PerfilAdmin extends javax.swing.JFrame {
     private void btnClienteAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClienteAdmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnClienteAdmActionPerformed
-
-    private void btnTarjetaPtsAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTarjetaPtsAdmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnTarjetaPtsAdmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,7 +251,6 @@ public class PerfilAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel Admin;
     public javax.swing.JButton btnClienteAdm;
     public javax.swing.JButton btnInventarioAdm;
-    public javax.swing.JButton btnTarjetaPtsAdm;
     public javax.swing.JButton btnUusarioAdm;
     public javax.swing.JButton btnVentasAdm;
     private javax.swing.JLabel jLabel1;
@@ -286,7 +259,6 @@ public class PerfilAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel pnlperfilAdmin;
     // End of variables declaration//GEN-END:variables
 }

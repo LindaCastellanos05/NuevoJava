@@ -76,9 +76,6 @@ public class daoFacturacion extends conexion implements crudInterface{
                 modfactura.setId_facturacion(rs.getInt("id_facturacion"));
                 modfactura.setIdcajero_facturacion(rs.getInt("idcajero_facturacion"));
                 modfactura.setIdcliente_facturacion(rs.getInt("idcliente_facturacion"));
-                modfactura.setIdpuntos_facturacion(rs.getInt("idpuntos_facturacion"));
-                modfactura.setLatitud_facturacion(rs.getString("latitud_facturaciom"));
-                modfactura.setLongitud_facturacion(rs.getString("longitud_facturacion"));
                 modfactura.setMonto_facturacion(rs.getDouble("monto_facturacion"));
                 modfactura.setNit_facturacion(rs.getString("nit_facturacion"));
                 

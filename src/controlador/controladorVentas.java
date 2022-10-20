@@ -91,6 +91,7 @@ public class controladorVentas implements ActionListener, MouseListener {
             }
         }
     }
+   
     
     //agregar un producto a la factura de la vista nueva venta
     public void agregarprodventatabla(){
@@ -100,7 +101,6 @@ public class controladorVentas implements ActionListener, MouseListener {
     int idprod = Integer.parseInt(nv.txtidprodnuevaventa.getText().toString());
     String nitcliente = nv.txtnitClienteNuevaVenta.getText().toString();
     String dpicliente = nv.txtdpiClienteNuevaVenta.getText().toString();
-    int tarjetapuntos = Integer.parseInt(nv.txttarjetaPuntosNuevaVenta.getText().toString());
     String nombreprod = nv.txtnombreprodNuevaVenta.getText().toString();
     double precioprod = Double.parseDouble(nv.txtprecioProdNuevaVenta.getText().toString());
     String cantidad = String.valueOf(nv.jspcantidadNuevaVenta.getValue().toString());

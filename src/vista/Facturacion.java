@@ -32,7 +32,6 @@ public class Facturacion extends javax.swing.JFrame {
         Admin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -40,8 +39,6 @@ public class Facturacion extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         txtidfac = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
         txtcantidadFac = new javax.swing.JTextField();
@@ -54,12 +51,8 @@ public class Facturacion extends javax.swing.JFrame {
         jSeparator15 = new javax.swing.JSeparator();
         txtclienteFac = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
-        txttarjetaPuntosFac = new javax.swing.JTextField();
-        jSeparator17 = new javax.swing.JSeparator();
         txtlongitudfac = new javax.swing.JTextField();
-        jSeparator18 = new javax.swing.JSeparator();
         txtlatitudfac = new javax.swing.JTextField();
-        jSeparator19 = new javax.swing.JSeparator();
         txtfechaFac = new com.toedter.calendar.JDateChooser();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblventasfacturacion = new javax.swing.JTable();
@@ -107,10 +100,6 @@ public class Facturacion extends javax.swing.JFrame {
 
         jPanel1.add(Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, -1));
 
-        jLabel3.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jLabel3.setText("ID tarjeta Pts:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, -1, -1));
-
         jLabel4.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         jLabel4.setText("ID Factura:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
@@ -139,14 +128,6 @@ public class Facturacion extends javax.swing.JFrame {
         jLabel10.setText("ID Cliente:");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jLabel11.setText("Longitud:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, -1, 20));
-
-        jLabel12.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jLabel12.setText("Latitud:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 570, -1, 20));
-
         txtidfac.setBorder(null);
         jPanel1.add(txtidfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 175, -1));
         jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 175, 10));
@@ -171,17 +152,11 @@ public class Facturacion extends javax.swing.JFrame {
         jPanel1.add(txtclienteFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 175, -1));
         jPanel1.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 175, 10));
 
-        txttarjetaPuntosFac.setBorder(null);
-        jPanel1.add(txttarjetaPuntosFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 175, -1));
-        jPanel1.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 175, 10));
-
         txtlongitudfac.setBorder(null);
         jPanel1.add(txtlongitudfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, 175, -1));
-        jPanel1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, 175, 10));
 
         txtlatitudfac.setBorder(null);
         jPanel1.add(txtlatitudfac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 175, -1));
-        jPanel1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, 175, 10));
         jPanel1.add(txtfechaFac, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 175, -1));
 
         tblventasfacturacion.setModel(new javax.swing.table.DefaultTableModel(
@@ -211,14 +186,14 @@ public class Facturacion extends javax.swing.JFrame {
         btnfacturacion1.setForeground(new java.awt.Color(255, 255, 255));
         btnfacturacion1.setText("BUSCAR FECHAS");
         btnfacturacion1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnfacturacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 550, 140, 30));
+        jPanel1.add(btnfacturacion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 140, 30));
 
         btncancel.setBackground(new java.awt.Color(0, 93, 139));
         btncancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btncancel.setForeground(new java.awt.Color(255, 255, 255));
         btncancel.setText("REGRESAR");
         btncancel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 120, 30));
+        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 540, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -275,11 +250,8 @@ public class Facturacion extends javax.swing.JFrame {
     public javax.swing.JButton btnfacturacion1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -294,9 +266,6 @@ public class Facturacion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
-    private javax.swing.JSeparator jSeparator17;
-    private javax.swing.JSeparator jSeparator18;
-    private javax.swing.JSeparator jSeparator19;
     public javax.swing.JLabel lbltotalventas;
     public javax.swing.JTable tblventasfacturacion;
     public javax.swing.JTextField txtcantidadFac;
@@ -307,7 +276,6 @@ public class Facturacion extends javax.swing.JFrame {
     public javax.swing.JTextField txtlongitudfac;
     public javax.swing.JTextField txtmontoFac;
     public javax.swing.JTextField txtnitFac;
-    public javax.swing.JTextField txttarjetaPuntosFac;
     public javax.swing.JTextField txtusuarioFac;
     // End of variables declaration//GEN-END:variables
 }

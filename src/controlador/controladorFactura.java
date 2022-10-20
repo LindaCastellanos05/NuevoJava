@@ -55,7 +55,7 @@ public class controladorFactura implements ActionListener, MouseListener {
     //mostrar el historial de ventas 
     public void ventasRealizadas(JTable tbl){
         factura.tblventasfacturacion.setModel(tablafactura);
-        Object[] col= new Object[10];
+        Object[] col= new Object[7];
         
         tablafactura.addColumn("ID");
         tablafactura.addColumn("CANTIDAD");
@@ -64,9 +64,7 @@ public class controladorFactura implements ActionListener, MouseListener {
         tablafactura.addColumn("NIT");
         tablafactura.addColumn("ID CLIENTE");
         tablafactura.addColumn("ID CAJERO");
-        tablafactura.addColumn("ID T.PUNTOS");
-        tablafactura.addColumn("LONGITUD");
-        tablafactura.addColumn("LATITUD");
+        
         
         
        
@@ -85,9 +83,7 @@ public class controladorFactura implements ActionListener, MouseListener {
          col[4] = dataVentas.get(i).getNit_facturacion();
          col[5] = dataVentas.get(i).getIdcliente_facturacion();
          col[6] = dataVentas.get(i).getIdcajero_facturacion();
-         col[7] = dataVentas.get(i).getIdpuntos_facturacion();
-         col[8] = dataVentas.get(i).getLongitud_facturacion();
-         col[9] = dataVentas.get(i).getLatitud_facturacion();
+        
          
          tablafactura.addRow(col);
          
@@ -166,9 +162,7 @@ public class controladorFactura implements ActionListener, MouseListener {
        factura.txtnitFac.setText(par[4]);
        factura.txtclienteFac.setText(par[5]);
        factura.txtusuarioFac.setText(par[6]);
-       factura.txttarjetaPuntosFac.setText(par[7]);
-       factura.txtlatitudfac.setText(par[9]);
-       factura.txtlongitudfac.setText(par[8]);
+       
        
 
   System.out.println("se esta haciendo click en la tabla");
@@ -180,6 +174,12 @@ public class controladorFactura implements ActionListener, MouseListener {
          factura.tblventasfacturacion.setRowSorter(null);
            totaldeventas();
            factura.txtfechaFac.setDate(null);
+           factura.txtcantidadFac.setText("");
+           factura.txtclienteFac.setText("");
+           factura.txtidfac.setText("");
+           factura.txtmontoFac.setText("");
+           factura.txtnitFac.setText("");
+           factura.txtusuarioFac.setText("");
     }
 
     @Override

@@ -45,7 +45,6 @@ public class Login extends javax.swing.JFrame {
         btningresarlogin = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -111,10 +110,6 @@ public class Login extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/usuario-de-perfil.png"))); // NOI18N
         bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
-        jCheckBox1.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        jCheckBox1.setText("RECORDAR SESION");
-        bg.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,7 +163,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel bg;
     public javax.swing.JButton btningresarlogin;
     public javax.swing.JButton btnsalirlogin;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

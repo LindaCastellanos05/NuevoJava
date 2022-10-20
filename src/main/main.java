@@ -42,11 +42,11 @@ public class main {
             ModeloUsuario modusuario = new ModeloUsuario();
         //controladorLogin clogin = new controladorLogin(modusuario);
          modeloFacturacion modfac = new modeloFacturacion();
-    //controladorFactura cf = new controladorFactura(modfac);
+    controladorFactura cf = new controladorFactura(modfac);
     modeloEstado mode = new modeloEstado();
     //controladorEstado ce = new controladorEstado(mode);
      modeloDetalleFactura moddet = new modeloDetalleFactura();
-     controladorVentas cv= new controladorVentas(moddet);
+     //controladorVentas cv= new controladorVentas(moddet);
      
     
     

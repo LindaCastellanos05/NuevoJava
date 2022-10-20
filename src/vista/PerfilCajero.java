@@ -36,8 +36,6 @@ public class PerfilCajero extends javax.swing.JFrame {
         btnVerCajero = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnClientesCajero = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        btnTarjetaPtsCajero = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -105,16 +103,6 @@ public class PerfilCajero extends javax.swing.JFrame {
         btnClientesCajero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.add(btnClientesCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 320, 111, 30));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/tarjetas.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, -1, -1));
-
-        btnTarjetaPtsCajero.setBackground(new java.awt.Color(0, 93, 139));
-        btnTarjetaPtsCajero.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        btnTarjetaPtsCajero.setForeground(new java.awt.Color(255, 255, 255));
-        btnTarjetaPtsCajero.setText("Tarjeta de Puntos");
-        btnTarjetaPtsCajero.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(btnTarjetaPtsCajero, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 111, 30));
-
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/punto-de-venta.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
@@ -122,7 +110,7 @@ public class PerfilCajero extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,14 +157,12 @@ public class PerfilCajero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClientesCajero;
-    private javax.swing.JButton btnTarjetaPtsCajero;
     private javax.swing.JButton btnVentaCajero;
     private javax.swing.JButton btnVerCajero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel pnltitulonuevaventa;
