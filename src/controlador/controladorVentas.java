@@ -297,10 +297,14 @@ public class controladorVentas implements ActionListener, MouseListener {
          
           boolean respuesta = daoc.consultarcliente(modc);
           int idcliente;
-            if(respuesta ==true){
+            if(respuesta == true){
+                if(modc.getId_cliente()!=0){
                idcliente = modc.getId_cliente();
+                }else{
+                    idcliente = 3;
+                }
             }else{
-               idcliente = 0;
+               idcliente = 3;
             }
             
         
